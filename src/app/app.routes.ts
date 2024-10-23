@@ -1,3 +1,4 @@
+import { ProductsComponent } from './pages/products/products.component';
 import { Routes } from '@angular/router';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { AppLayoutComponent } from './components/app-layout/app-layout.component';
@@ -119,6 +120,19 @@ export const routes: Routes = [
             IRoleType.user,
           ],
           name: 'categories',
+          showInSidebar: true
+        }
+      },
+      {
+        path: 'products',
+        component: ProductsComponent,
+        data: { 
+          authorities: [
+            IRoleType.admin, 
+            IRoleType.superAdmin,
+            IRoleType.user,
+          ],
+          name: 'products',
           showInSidebar: true
         }
       }
